@@ -6,10 +6,10 @@ import yaml
 #print(psutil.virtual_memory().percent)
 
 with open('config.yml', 'r') as file:
-    thresholds = yaml.safe_load(file)
+    data = yaml.safe_load(file)
 
-print(thresholds['thresholds']['cpu_threshold'])
-print(thresholds['thresholds']['mem_threshold'])
+cpu_t = data['thresholds']['cpu_threshold']
+mem_t = data['thresholds']['mem_threshold']
 
 
 def display_usage(cpu_usage, mem_usage, bars=50):
@@ -23,5 +23,27 @@ def display_usage(cpu_usage, mem_usage, bars=50):
     print(f"MEMORY USAGE:|{mem_bar}| {mem_usage:.2f}%  ", end = "\r")
 
 while True:
-    display_usage(psutil.cpu_percent(), psutil.virtual_memory().percent, 30)
-    time.sleep(0.5)
+      cpu_usage = 0
+      memory_usage = 0
+      display_usage(psutil.cpu_percent(), psutil.virtual_memory().percent, 30)
+      time.sleep(0.5)
+      cpu_usage = psutil.cpu_percent()
+      memory_usage = psutil.virtual_memory().percent
+      if(cpu_usage >= cpu_t):
+          print("Reached its CPU threshold limit")
+          print("Crossed the CPU threshold limit of ", cpu_t)
+          print("the current CPU usage is ", cpu_usage)
+          break
+      else:
+          print("\r")
+          print("Still within the limit")
+    
+      if(memory_usage >= mem_t):
+          print("Reached its threshold limit")
+          print("Crossed the memory threshold limit of ", mem_t)
+          print("the current memory usage is ", memory_usage)
+          break
+      else:
+          print("\r")
+          print("Still within the limit")
+    
