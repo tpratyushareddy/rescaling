@@ -1,8 +1,4 @@
-#thresholds:
-  #cpu_threshold: [80%]
-  #mem_threshold: [90%]
+thresholds:
+  cpu_threshold: 80%
+  mem_threshold: 90%
 
-rest:
-  url: "https://example.org/primenumbers/v1"
-  port: 8443
-prime_numbers: [2, 3, 5, 7, 11, 13, 17, 19]
