@@ -1,2 +1,4 @@
-yaml,
+yaml
 psutil
+git
+python3

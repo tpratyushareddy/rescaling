@@ -1,5 +1,5 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM centos:7
+FROM python:3.10-slim
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -8,10 +8,10 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
-RUN yum install python3 python-psutil pyyaml git -y
+RUN python -m pip install psutil pyyaml
 
-RUN git clone https://github.com/tpratyushareddy/rescaling.git /tmp/rescaling
-WORKDIR /tmp/rescaling
+WORKDIR /app
+COPY . /app
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["python3", "cpu_usage_display.py"]
+CMD ["python", "cpu_usage_display.py"]
