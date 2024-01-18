@@ -1,6 +1,6 @@
 # Resource watcher
 
-Monitors cpu and memory resources on the host and lets you resize the instance type if it expends the threshold limit.
+Monitors CPU and memory resources on the host and lets you resize the instance type if it exceeds the threshold limit.
 
 ### Installations required for the program  
 
@@ -11,13 +11,20 @@ Psutil : pip install pstuil (for checking cpu/ memory usage)
 
 ### Config file
 
-Has two parameters: Cpu_threshold and Memory_threshold
+Users can chnage the thressholds limit in [Config.yml](https://github.com/tpratyushareddy/rescaling/blob/main/config.yml).
 
-### How to run the program 
+### To run the python script 
 
-In command promt : python run cpu_usage_display.py  
+Users can run python code directly by using the following command
+In command promt : python3 cpu_usage_display.py  
+
+### To run in docker 
+
+Using docker use the following command
+In command promt : docker run pratyusha056/rescaling:latest  
 
 ### Expected output
 
 It is set to display the CPU/Memory usage of the host system.
 Breaks the loop if it reaches the threshold set in config file. 
+
