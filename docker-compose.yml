@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  rescaling:
+    image: rescaling
+    build:
+      context: .
+      dockerfile: ./Dockerfile
