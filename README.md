@@ -34,3 +34,4 @@ This project is automated to build images when ever there is a push to the 'main
 Meaning it automaticaly builds an image with the latest code change and provides the users 
 with latest code and chnages. View [docker_image.yaml](https://github.com/tpratyushareddy/rescaling/blob/main/.github/workflows/docker_image.yml).
 
+Check the [action file](https://github.com/tpratyushareddy/rescaling/actions). 
