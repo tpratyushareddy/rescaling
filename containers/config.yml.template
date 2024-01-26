@@ -1,4 +1,3 @@
 thresholds:
   cpu_threshold: $CPU_THRESHOLD
   mem_threshold: $MEM_THRESHOLD
-
