@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker images
 # This command is used to build docker image from the path specified -> DockerFile . (Dockerfile in current directory)
       run:  |
-        docker build --no-cache -t docker.io/pratyusha056/rescaling:latest -f Dockerfile .
+        docker build --no-cache -t docker.io/pratyusha056/rescaling:latest -f containers/Dockerfile .
 # Prior to this step set up two secrets 1. DOCKER_USERNAME with username of the docker hub and 2. DOCKER_PASSWORD with the password to login to the docker repos
     - name: Log in to Docker Hub
       run: docker login docker.io -u ${username} -p ${password}
