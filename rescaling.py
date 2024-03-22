@@ -2,8 +2,8 @@ import time
 import psutil 
 import yaml
 
-#print(psutil.cpu_percent())
-#print(psutil.virtual_memory().percent)
+print(psutil.cpu_percent())
+print(psutil.virtual_memory().percent)
 
 with open('config.yml', 'r') as file:
     data = yaml.safe_load(file)
