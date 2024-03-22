@@ -1,11 +1,11 @@
 #!/bin/sh
 
-action = $1
-if [ "$action" == [images] ]
+
+if [ "$1" == [images] ]
 then
     echo "Removing Images"
     docker rmi -f $(docker images -q)
-elif [ "$action" == [container] ]
+elif [ "$1" == [container] ]
 then
     echo "Removing Containers"
     docker rm -f $(docker ps -aq)
