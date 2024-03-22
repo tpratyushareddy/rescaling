@@ -10,7 +10,5 @@ then
     echo "Removing Containers"
     docker rm -f $(docker ps -aq)
 else 
-    echo "$action that has been passed is not valid."
-    echo "Please choose images or containers." 
-
-fi                         
+    echo "Aurgumrent that has been passed is not valid, Please choose images or containers."
+fi
